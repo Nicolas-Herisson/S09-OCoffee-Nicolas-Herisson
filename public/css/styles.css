@@ -17,11 +17,11 @@ body {
   background-color: #874b1b;
   border-radius: 5rem;
   text-align: center;
-  line-height: 25px;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  padding: 0 1.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
 }
 
                     /* INDEX */
@@ -34,17 +34,24 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
   margin-bottom: 50px;
 
 }
+
+/* nav {
+  position: relative;
+} */
 
 .menu {
   position: relative;
 }
 
 .menu.button {
-  height: 25px;
+  z-index: 10000;
+  top: 0.8rem;
+  height: 35px;
   width: 30px;
   background-image: url(../img/menu.png);
   background-repeat: no-repeat;
@@ -57,15 +64,19 @@ header {
 .menu.list {
   position: absolute;
   display: none;
-  top: 100%;
-  left: -5rem;
-  background-color: beige;
+  top: 0;
+  right: 0;
+  background-color: #3e1e04;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  width: 150px;
+  width: 50vw;
+  height: 100vh;
+  text-align: start;
+  align-content: center;
 }
 
 .menu.list.open {
  display: block;
+
 }
 
 .menu .button:hover {
@@ -92,8 +103,15 @@ ul {
   list-style-type: none;
 }
 
+li {
+  margin-bottom: 2rem;
+}
+
 li a {
   text-decoration: none;
+  color: beige;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 #about {
@@ -122,18 +140,23 @@ h2 {
   font-size: 2.5rem;
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 p {
   margin-bottom: 2rem; 
   font-size: 1.5rem;
 }
 
-.news.paragraph {
+.news.article--name, .news.article--description {
   padding: 2rem 1rem 0rem 1rem;
 }
 
 .caroussel {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .navigate {
@@ -162,8 +185,9 @@ p {
 }
 
 .news.article--active {
-  display: block;
-  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   border-width: 2px;
   border-style: solid;
   width: 100%;
