@@ -3,23 +3,26 @@
 
     <%- include('partials/header') %>
 
-    <main>
+    <main id="details">
       <div class="catalog">
         <img src="/img/catalogBackground.jpg" alt="">
       </div>
 
+
       <div class="products container">
 
-        <article class="container product">
-          <h2 class="container product--name"><%= coffee.name %></h2>
-          <div class="container product--origin">Origine : <span><%= coffee.origin %></span></div>
-          <div class="container product--spec">Caractéristique principale : <span><%= coffee.spec %></span></div>
-          <p class="container product--desc">Description : <span><%= coffee.description %></span></p>
-          <div class="container product--price">Prix au Kilo : <span><%= coffee.price %>€</span></div>
-          <div class="container product--available">Disponible : <span><%= coffee.available %></span></div>
+        <article class="product container">
+          <h2 class="product name"><%= coffee.name %></h2>
+          <img class="product img" src="/img/coffees/<%= coffee.reference %>.png" alt="">
+          <div class="product origin">Origine : <span><%= coffee.origin %></span></div>
+          <div class="product spec">Caractéristique principale : <span><%= coffee.spec %></span></div>
+          <p class="product desc">Description : <span><%= coffee.description %></span></p>
+          <div class="product price">Prix au Kilo : <span><%= coffee.price %>€</span></div>
+          <div class="product available">Disponible : <span><%= coffee.available %></span></div>
         </article>
+          
       </div>
-      <a class="products button" href="/catalogue">Retour au catalogue</a>
+      <a class="products button" href="/catalogue">Catalogue</a>
     </main>
 
     <footer>

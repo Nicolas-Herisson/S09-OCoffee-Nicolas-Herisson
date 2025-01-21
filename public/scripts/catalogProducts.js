@@ -1,4 +1,4 @@
-const products = document.querySelectorAll('.container.product');
+const products = document.querySelectorAll('.product.container');
 const coffeesButton = document.querySelector('.products.button');
 let open = false;
 let index = 0;

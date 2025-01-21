@@ -12,10 +12,10 @@
       <div class="products container">
 
         <% for( const coffee of coffees ) { %>
-          <article class="container product">
-            <h2 class="container product--name"><%= coffee.name %></h2>
-            <p class="container product--desc"><%= coffee.description %></p>
-            <a class="container button" href="/catalogue/<%= coffee.id %>">Découvrir</a>
+          <article class="product container">
+            <h2 class="product name"><%= coffee.name %></h2>
+            <p class="product desc"><%= coffee.description %></p>
+            <a class="product button" href="/catalogue/<%= coffee.id %>">Découvrir</a>
           </article>
         <% } %>
       </div>
