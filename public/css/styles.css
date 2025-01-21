@@ -11,6 +11,21 @@ body {
   background-color: beige;
 }
 
+                /* COMMONS */
+
+.button {
+  background-color: #874b1b;
+  border-radius: 5rem;
+  text-align: center;
+  line-height: 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+}
+
+                    /* INDEX */
+
 .hide {
   display: none;
 }
@@ -28,7 +43,7 @@ header {
   position: relative;
 }
 
-.menu .button {
+.menu.button {
   height: 25px;
   width: 30px;
   background-image: url(../img/menu.png);
@@ -36,6 +51,7 @@ header {
   background-size: 100%;
   border: none;
   background-color: beige;
+  border-radius: 0;
 }
 
 .menu.list {
@@ -50,10 +66,6 @@ header {
 
 .menu.list.open {
  display: block;
-}
-
-.menu.list a {
-  text-align: left;
 }
 
 .menu .button:hover {
@@ -105,27 +117,6 @@ li a {
   justify-content: center;
 }
 
-
-#about .article--button {
-  width: 150px;
-  height: 25px;
-  position: relative;
-  left: 30%;
-  background-color: #874b1b;
-  text-align: center;
-  line-height: 25px;
-}
-
-.news .button {
-  position: relative;
-  background-color: #874b1b;
-  width: 100px;
-  height: 25px;
-  left: 45%;
-  text-align: center;
-  line-height: 25px;
-}
-
 h2 {
   margin-bottom: 10px;
   font-size: 2.5rem;
@@ -136,13 +127,8 @@ p {
   font-size: 1.5rem;
 }
 
-.news {
-  width: 100%;
-}
-
 .news.paragraph {
-  padding: 0rem 1rem 0rem 1rem;
-  //margin-bottom: 6rem;
+  padding: 2rem 1rem 0rem 1rem;
 }
 
 .caroussel {
@@ -177,4 +163,66 @@ p {
 
 .news.article--active {
   display: block;
+  align-content: center;
+  border-width: 2px;
+  border-style: solid;
+  width: 100%;
+}
+
+.news.button {
+  margin: 0 45% 2rem;
+}
+
+                    /* CATALOG */
+
+.catalog {
+  position: relative;
+  margin-bottom: 2rem;
+}                    
+
+.catalog h1 {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  font-size: 5rem;
+  font-weight: 900;
+  backdrop-filter: blur(2px);
+}
+
+.container.product {
+  display: none;
+}
+
+.products.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.container.product.active {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: center;
+  border: black solid 2px;
+  padding: 2rem;
+}
+
+.product--button {
+  background-color: #874b1b;
+  border-radius: 5rem;
+  text-align: center;
+  line-height: 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+  align-self: flex-end;
+}
+
+.products.button {
+  margin: 2rem 40% 2rem;
+  height: 40px;
+  width: 200px;
 }

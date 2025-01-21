@@ -6,7 +6,7 @@
     <main>
       <div id="about">
         <article class="about article">
-          <h2 class="article title--atmospher">Ambiance de la boutique</h2>
+          <h2 class="about title--atmospher">Ambiance de la boutique</h2>
           <p class="about paragraph--atmospher">
             Bienvenue dans notre boutique, où règne une ambiance chaleureuse et accueillante qui éveille tous vos sens. Dès que vous franchissez la porte, vous êtes enveloppé d'une douce symphonie d'arômes envoûtants de café fraîchement moulu.
 
@@ -38,7 +38,7 @@
 
             Aujourd'hui, la boutique de café des frères Pepper est devenue une référence pour les amateurs de café de la région. Leur passion, leur connaissance approfondie et leur engagement envers la qualité se reflètent dans chaque tasse servie. Jean et Jacques sont fiers d'avoir transformé leur voyage en Colombie en une aventure entrepreneuriale qui a permis à tant de personnes de découvrir et d'apprécier le véritable plaisir du café.
           </p>
-          <div class="about article--button">Voir le catalogue</div>
+          <button class="about button">Découvrir notre catalogue</button>
         </article>
         <div class="about img--container">
           <img class="about img" src="/img/about.jpg" alt="">
@@ -52,18 +52,14 @@
           <div class="navigate">
             <button class="navigate previousArrowButton" onclick="previous()"></button>
           </div>
-          <article class="news article">
-            <p class="news paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates labore voluptatum tenetur unde nulla quo cumque, sequi, rem amet adipisci totam quod quisquam, distinctio nihil quas aliquam maiores obcaecati quibusdam repellendus dignissimos fugit nobis pariatur eos. Itaque qui, mollitia unde fugiat, quisquam maxime eaque dignissimos in odit, repellat obcaecati ducimus! Recusandae numquam ad natus necessitatibus, molestias, voluptate nihil odit aliquam dolor totam aliquid voluptatem porro harum cum laudantium corporis eaque quod. Aspernatur, eligendi voluptas minima inventore tempore corporis nesciunt esse quod porro laudantium libero dolorem modi nemo, incidunt cumque repudiandae vero aliquid atque perferendis. Obcaecati molestias a ipsam id adipisci, minus commodi iusto quis facilis exercitationem illo, voluptas in. Similique deserunt provident incidunt. Eveniet deserunt iusto suscipit cupiditate dolorem voluptas, amet ea quo molestias ex magni laboriosam culpa minima aspernatur similique reprehenderit. Repellendus inventore fugiat atque maiores qui voluptas laboriosam praesentium eligendi iste fugit maxime, voluptatem deleniti! Molestias, architecto et. </p>
-            <div class="news button">Decouvrir</div>
-          </article>
-          <article class="news article">
-            <p class="news paragraph"> voluptatum tenetur unde nulla quo cumque, sequi, rem amet adipisci totam quod quisquam, distinctio nihil quas aliquam maiores obcaecati quibusdam repellendus dignissimos fugit nobis pariatur eos. Itaque qui, mollitia unde fugiat, quisquam maxime eaque dignissimos in odit, repellat obcaecati ducimus! Recusandae numquam ad natus necessitatibus, molestias, voluptate nihil odit aliquam dolor totam aliquid voluptatem porro harum cum laudantium corporis eaque quod. Aspernatur, eligendi voluptas minima inventore tempore corporis nesciunt esse quod porro laudantium libero dolorem modi nemo, incidunt cumque repudiandae vero aliquid atque perferendis. Obcaecati molestias a ipsam id adipisci, minus commodi iusto quis facilis exercitationem illo, voluptas in. Similique deserunt provident incidunt. Eveniet deserunt iusto suscipit cupiditate dolorem voluptas, amet ea quo molestias ex magni laboriosam culpa minima aspernatur similique reprehenderit. Repellendus inventore fugiat atque maiores qui voluptas laboriosam praesentium eligendi iste fugit maxime, voluptatem deleniti! Molestias, architecto et. </p>
-            <div class="news button">Decouvrir</div>
-          </article>
-          <article class="news article">
-            <p class="news paragraph">consectetur adipisicing elit. Voluptates labore voluptatum tenetur unde nulla quo cumque, sequi, rem amet adipisci totam quod quisquam, distinctio nihil quas aliquam maiores obcaecati quibusdam repellendus dignissimos fugit nobis pariatur eos. Itaque qui, mollitia unde fugiat, quisquam maxime eaque dignissimos in odit, repellat obcaecati ducimus! Recusandae numquam ad natus necessitatibus, molestias, voluptate nihil odit aliquam dolor totam aliquid voluptatem porro harum cum laudantium corporis eaque quod. Aspernatur, eligendi voluptas minima inventore tempore corporis nesciunt esse quod porro laudantium libero dolorem modi nemo, incidunt cumque repudiandae vero aliquid atque perferendis. Obcaecati molestias a ipsam id adipisci, minus commodi iusto quis facilis exercitationem illo, voluptas in. Similique deserunt provident incidunt. Eveniet deserunt iusto suscipit cupiditate dolorem voluptas, amet ea quo molestias ex magni laboriosam culpa minima aspernatur similique reprehenderit. Repellendus inventore fugiat atque maiores qui voluptas laboriosam praesentium eligendi iste fugit maxime, voluptatem deleniti! Molestias, architecto et. </p>
-            <div class="news button">Decouvrir</div>
-          </article>
+          <% for( const coffee of newCoffees ) { %>
+            <article class="news article">
+              <p class="news paragraph"><%= coffee.name %></p>
+              <p class="news paragraph"><%= coffee.description %> </p>
+              <button class="news button">Découvrir</button>
+            </article>
+          <% } %>
+          
           <div class="navigate">
             <button class="nextArrowButton" onclick="next()"></button>
           </div>

@@ -1,13 +1,34 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <%- include('partials/header') %>
-    </header>
 
-    <main class="homepage"></main>
+    <%- include('partials/header') %>
+
+    <main>
+      <div class="catalog">
+        <img src="/img/catalogBackground.jpg" alt="">
+        <h1>Notre catalogue</h1>
+      </div>
+
+      <div class="products container">
+
+        <% for( const coffee of coffees ) { %>
+          <article class="container product">
+            <h2 class="container product--name"><%= coffee.name %></h2>
+            <p class="container product--desc"><%= coffee.description %></p>
+            <button class="container product--button">Découvrir</button>
+          </article>
+        <% } %>
+      </div>
+      <button class="products button">Voir tous les cafés</button>
+    </main>
 
     <footer>
       <%- include('partials/footer') %>
     </footer>
+
+    <script defer src="/scripts/indexMenu.js" ></script>
+    <script defer src="/scripts/catalogProducts.js" ></script>
   </body>
+
+
 </html>
