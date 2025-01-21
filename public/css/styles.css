@@ -8,6 +8,11 @@ html {
 
 body {
   margin: 5px 15px;
+  background-color: beige;
+}
+
+.hide {
+  display: none;
 }
 
 header {
@@ -17,6 +22,47 @@ header {
   justify-content: space-between;
   margin-bottom: 50px;
 
+}
+
+.menu {
+  position: relative;
+}
+
+.menu .button {
+  height: 25px;
+  width: 30px;
+  background-image: url(../img/menu.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: none;
+  background-color: beige;
+}
+
+.menu.list {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: -5rem;
+  background-color: beige;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 150px;
+}
+
+.menu.list.open {
+ display: block;
+}
+
+.menu.list a {
+  text-align: left;
+}
+
+.menu .button:hover {
+  box-shadow: 1px 1px 5px #3e1e04;
+}
+
+.header span {
+  color: #3e1e04;
+  font-size: 1.5rem;
 }
 
 .header.logo {
@@ -33,6 +79,7 @@ header {
 ul { 
   list-style-type: none;
 }
+
 li a {
   text-decoration: none;
 }
@@ -48,23 +95,30 @@ li a {
 
 #about img {
     width: 100%;
-    position: relative;
-    top: 25%;
-  }
+    height: auto;
+    height: 30%;
+}
+
+.about.img--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 #about .article--button {
   width: 150px;
   height: 25px;
   position: relative;
   left: 30%;
-  background-color: beige;
+  background-color: #874b1b;
   text-align: center;
   line-height: 25px;
 }
 
 .news .button {
   position: relative;
-  background-color: beige;
+  background-color: #874b1b;
   width: 100px;
   height: 25px;
   left: 45%;
@@ -74,26 +128,43 @@ li a {
 
 h2 {
   margin-bottom: 10px;
+  font-size: 2.5rem;
 }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 2rem; 
+  font-size: 1.5rem;
 }
 
-.navigation {
+.news {
+  width: 100%;
+}
+
+.news.paragraph {
+  padding: 0rem 1rem 0rem 1rem;
+  //margin-bottom: 6rem;
+}
+
+.caroussel {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+}
+
+.navigate {
+  align-content: center;
 }
 
 .previousArrowButton, .nextArrowButton {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-image: url(../img/navigateArrow.png);
   background-size: 100%;
   border: none;
-  background-color: white;
+  background-color: beige;
+}
+
+.previousArrowButton:hover, .nextArrowButton:hover {
+  box-shadow: 1px 1px 5px #3e1e04;
 }
 
 .previousArrowButton {
