@@ -14,6 +14,16 @@ const dataMapper = {
         const result = await client.query(sql);
 
         return result.rows;
+    },
+    getCoffee: async (id) => {
+        const sql = {
+            text: `SELECT * FROM coffee WHERE $1=coffee.id;`,
+            values: [id]
+        };
+
+        const result = await client.query(sql);
+
+        return result.rows[0];
     }
 };
 

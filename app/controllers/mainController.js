@@ -10,6 +10,13 @@ const mainController = {
         const coffees = await dataMapper.getAllCoffees();
 
         res.render("catalog", {coffees});
+    },
+    showDetailpage: async (req, res) => {
+        const id = req.params.id;
+
+        const coffee = await dataMapper.getCoffee(id);
+
+        res.render("details", {coffee});
     }
 };
 

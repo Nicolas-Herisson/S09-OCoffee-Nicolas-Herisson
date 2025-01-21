@@ -15,7 +15,7 @@
           <article class="container product">
             <h2 class="container product--name"><%= coffee.name %></h2>
             <p class="container product--desc"><%= coffee.description %></p>
-            <button class="container product--button">Découvrir</button>
+            <a class="container button" href="/catalogue/<%= coffee.id %>">Découvrir</a>
           </article>
         <% } %>
       </div>

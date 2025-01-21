@@ -22,6 +22,8 @@ body {
   margin-bottom: 2rem;
   padding: 1rem 2rem;
   cursor: pointer;
+  text-decoration: none;
+  color: beige;
 }
 
                     /* INDEX */
@@ -72,6 +74,7 @@ header {
   height: 100vh;
   text-align: start;
   align-content: center;
+  z-index: 9999;
 }
 
 .menu.list.open {
@@ -225,24 +228,41 @@ p {
 
 .container.product.active {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;
   border: black solid 2px;
   padding: 2rem;
 }
 
+.container.product div, .container.product p {
+  align-self: start;
+}
+
+.product--origin, .product--spec, .product--desc, .product--price, .product--available {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.container.product span {
+  font-weight: 500;
+}
+
 .product--button {
   background-color: #874b1b;
   border-radius: 5rem;
-  text-align: center;
+  
   line-height: 25px;
   font-size: 1.5rem;
   font-weight: 700;
+
   margin-bottom: 2rem;
   padding: 0 1.5rem;
-  align-self: flex-end;
+
+  align-self: center;
+  text-align: center;
 }
 
 .products.button {
