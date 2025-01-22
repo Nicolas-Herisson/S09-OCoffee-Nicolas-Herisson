@@ -1,0 +1,31 @@
+<section class="form container">
+    <form action="/catalogue/specFilter">
+      <select name="specFilter" id="specFilter" class="form select" aria-labelledby="Product filter by coffe specification">
+        <% for( const spec of specs) { %>
+          <option value="<%= spec.spec %>" aria-label="Filter by <%= spec.spec %>"><%= spec.spec %></option>
+        <% } %>
+      </select>
+      <input class="form button" id="specFilterutton" type="submit" value="Valider" aria-label="Submit coffee specification filter">
+    </form>
+
+    <form action="/catalogue/originFilter">
+      <select name="originFilter" id="originFilter" class="form select" aria-labelledby="Product filter by coffe origin">
+          <% for( const origin of origins) { %>
+          <option value="<%= origin.origin %>" aria-label="Filter by <%= origin.origin %>"><%= origin.origin %></option>
+        <% } %>
+      </select>
+      <input class="form button" id="originFilter" type="submit" value="Valider" aria-label="Submit coffee origin filter">
+    </form>
+
+    <!-- To implement | must sort filtered results -->
+    <!-- <form action="/catalogue/sort">
+      <select name="sortSelector" id="sortSelector" class="form select">
+          <option value="spec asc">Caractéristique ⬆️</option>
+          <option value="spec desc">Caractéristique ⬇️</option>
+          <option value="origin asc">Origine ⬆️</option>
+          <option value="origin desc">Origine ⬇️</option>
+      </select>
+      <input class="form button" id="sortSelectorBbutton" type="submit" value="Valider">
+    </form> -->
+
+</section>
