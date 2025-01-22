@@ -9,21 +9,42 @@
         <h1>Notre catalogue</h1>
       </div>
 
-      <form id="sort form">
-        <select name="sort" id="sort">
-            <option value="spec">Caractéristique</option>
-            <option value="origin">Origine</option>
-            <option value="prix">Prix</option>
+      <form action="/catalogue/specFilter">
+        <select name="specFilter" id="specFilter">
+          <% for( const spec of specs) { %>
+            <option value="<%= spec.spec %>"><%= spec.spec %></option>
+          <% } %>
         </select>
-        <input class="sort--button" type="button" value="Valider">
+        <input class="specFilterButton" id="specFilterutton" type="submit" value="Valider">
+      </form>
+
+      <form action="/catalogue/originFilter">
+        <select name="originFilter" id="originFilter">
+             <% for( const origin of origins) { %>
+            <option value="<%= origin.origin %>"><%= origin.origin %></option>
+          <% } %>
+        </select>
+        <input class="originFilterButton" id="originFilter" type="submit" value="Valider">
+      </form>
+
+      <form action="/catalogue/sort">
+        <select name="sortSelector" id="sortSelector">
+            <option value="spec asc">Caractéristique ⬆️</option>
+            <option value="spec desc">Caractéristique ⬇️</option>
+            <option value="origin asc">Origine ⬆️</option>
+            <option value="origin desc">Origine ⬇️</option>
+        </select>
+        <input class="sortSelectorButton" id="sortSelectorBbutton" type="submit" value="Valider">
       </form>
 
 
       <div class="products container">
 
-        <% for( const coffee of coffees ) { %>
+        <% for( const coffee of filteredCoffees ) { %>
           <article class="product container">
             <h3 class="product name"><%= coffee.name %></h3>
+            <div class="product origin">Origine : <span><%= coffee.origin %></span></div>
+            <div class="product spec">Caractéristique principale : <span><%= coffee.spec %></span></div>
             <p class="product desc"><%= coffee.description %></p>
             <a class="product button" href="/catalogue/<%= coffee.id %>">Découvrir</a>
           </article>
@@ -40,7 +61,6 @@
 
     <script defer src="/scripts/menu.js" ></script>
     <script defer src="/scripts/displayProducts.js" ></script>
-    <script defer src="/scripts/sort.js"></script>
   </body>
 
 

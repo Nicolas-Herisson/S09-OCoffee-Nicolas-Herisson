@@ -3,9 +3,9 @@ const coffeesButton = document.querySelector('.products.button');
 let open = false;
 let index = 0;
 const url = window.location.href;
-console.log(window.location.href)
 
-if (!isNaN(url.split('/').pop()))
+// if on catalogue/:id(details) or filtered result = 1
+if (!isNaN(url.split('/').pop()) || products.length === 1)
 {
     products[0].classList.add('active');
 }

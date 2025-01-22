@@ -18,8 +18,10 @@ const mainController = {
         try 
         {
             const coffees = await dataMapper.getAllCoffees();
+            const specs = await dataMapper.getColumnNoDups('spec');
+            const origins = await dataMapper.getColumnNoDups('origin');
 
-            res.render("catalog", {coffees});
+            res.render("catalog", {coffees, filteredCoffees: coffees, specs, origins});
         } 
         catch (error) 
         {
@@ -43,8 +45,58 @@ const mainController = {
         {
             errors[500](error);
         }
-        
-    }
+    },
+    showOriginpage: async (req,res) => {
+        try 
+        {
+            const origin = req.query.originFilter;
+            const coffees = await dataMapper.getAllCoffees();
+            const filteredCoffees = await dataMapper.getFilteredCoffees(origin, 'origin');
+            const specs = await dataMapper.getColumnNoDups('spec');
+            const origins = await dataMapper.getColumnNoDups('origin');
+
+            res.render("catalog", {coffees, filteredCoffees, specs, origins});
+        } 
+        catch (error) 
+        {
+            errors[500](error);
+        }
+    },
+    showSpecpage: async (req,res) => {
+        try 
+        {
+            const spec = req.query.specFilter;
+ 
+            const coffees = await dataMapper.getAllCoffees();
+            const filteredCoffees = await dataMapper.getFilteredCoffees(spec, 'spec');
+            const specs = await dataMapper.getColumnNoDups('spec');
+            const origins = await dataMapper.getColumnNoDups('origin');
+
+            res.render("catalog", {coffees, filteredCoffees, specs, origins});
+        } 
+        catch (error) 
+        {
+            errors[500](error);
+        }
+    },
+    showSortpage: async (req,res) => {
+        try 
+        {
+            const param = req.query.sortSelector;
+            const colName = param.split(" ")[0];
+            const order = param.split(" ")[1].toUpperCase();
+
+
+            const coffees = await dataMapper.getAllCoffees();
+            const sortedCoffees = await dataMapper.getSortedCoffee(colName, order);
+
+            res.render("catalog", {coffees,sortedCoffees});
+        } 
+        catch (error) 
+        {
+            errors[500](error);
+        }
+    },
 };
 
 export default mainController;
