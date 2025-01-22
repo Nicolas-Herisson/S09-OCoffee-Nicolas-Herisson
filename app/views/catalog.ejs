@@ -9,34 +9,36 @@
         <h1>Notre catalogue</h1>
       </div>
 
-      <form action="/catalogue/specFilter">
-        <select name="specFilter" id="specFilter">
-          <% for( const spec of specs) { %>
-            <option value="<%= spec.spec %>"><%= spec.spec %></option>
-          <% } %>
-        </select>
-        <input class="specFilterButton" id="specFilterutton" type="submit" value="Valider">
-      </form>
+      <section class="form container">
+        <form action="/catalogue/specFilter">
+          <select name="specFilter" id="specFilter" class="form select">
+            <% for( const spec of specs) { %>
+              <option value="<%= spec.spec %>"><%= spec.spec %></option>
+            <% } %>
+          </select>
+          <input class="form button" id="specFilterutton" type="submit" value="Valider">
+        </form>
 
-      <form action="/catalogue/originFilter">
-        <select name="originFilter" id="originFilter">
-             <% for( const origin of origins) { %>
-            <option value="<%= origin.origin %>"><%= origin.origin %></option>
-          <% } %>
-        </select>
-        <input class="originFilterButton" id="originFilter" type="submit" value="Valider">
-      </form>
+        <form action="/catalogue/originFilter">
+          <select name="originFilter" id="originFilter" class="form select">
+              <% for( const origin of origins) { %>
+              <option value="<%= origin.origin %>"><%= origin.origin %></option>
+            <% } %>
+          </select>
+          <input class="form button" id="originFilter" type="submit" value="Valider">
+        </form>
 
-      <form action="/catalogue/sort">
-        <select name="sortSelector" id="sortSelector">
-            <option value="spec asc">Caractéristique ⬆️</option>
-            <option value="spec desc">Caractéristique ⬇️</option>
-            <option value="origin asc">Origine ⬆️</option>
-            <option value="origin desc">Origine ⬇️</option>
-        </select>
-        <input class="sortSelectorButton" id="sortSelectorBbutton" type="submit" value="Valider">
-      </form>
+        <form action="/catalogue/sort">
+          <select name="sortSelector" id="sortSelector" class="form select">
+              <option value="spec asc">Caractéristique ⬆️</option>
+              <option value="spec desc">Caractéristique ⬇️</option>
+              <option value="origin asc">Origine ⬆️</option>
+              <option value="origin desc">Origine ⬇️</option>
+          </select>
+          <input class="form button" id="sortSelectorBbutton" type="submit" value="Valider">
+        </form>
 
+    </section>
 
       <div class="products container">
 
@@ -50,9 +52,12 @@
           </article>
         <% } %>
       </div>
-      <div class="button-container">
-        <button class="products button">Voir tous les cafés</button>
-      </div>
+      <% if (filteredCoffees.length > 3) { %>
+        <div class="button-container">
+          <button class="products button">Voir tous les cafés</button>
+        </div>
+      <% } %>
+      
     </main>
 
     <footer>
