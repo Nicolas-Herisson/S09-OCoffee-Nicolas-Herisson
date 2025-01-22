@@ -1,22 +1,49 @@
 import dataMapper from "../dataMapper.js";
+import errors from "../middleware/errors.js";
 
 const mainController = {
     showHomepage: async (req, res) => {
-        const newCoffees = await dataMapper.getNewCoffees();
+        try 
+        {
+            const newCoffees = await dataMapper.getNewCoffees();
 
-        res.render("index", {newCoffees});
+            res.render("index", {newCoffees});
+        } 
+        catch (error) 
+        {
+            errors[500](error);
+        }
     },
     showCatalogpage: async (req, res) => {
-        const coffees = await dataMapper.getAllCoffees();
+        try 
+        {
+            const coffees = await dataMapper.getAllCoffees();
 
-        res.render("catalog", {coffees});
+            res.render("catalog", {coffees});
+        } 
+        catch (error) 
+        {
+            errors[500](error);
+        }
+        
     },
     showDetailpage: async (req, res) => {
-        const id = req.params.id;
+        try 
+        {
+            const id = req.params.id;
 
-        const coffee = await dataMapper.getCoffee(id);
+            const coffee = await dataMapper.getCoffee(id);
 
-        res.render("details", {coffee});
+            if (!coffee)
+                return errors[404](res);
+
+            res.render("details", {coffee});
+        } 
+        catch (error) 
+        {
+            errors[500](error);
+        }
+        
     }
 };
 
