@@ -49,10 +49,13 @@ body {
   align-items: center;
   border: black solid 2px;
   padding: 2rem;
+  background-color: var(--secondColorOpacity);
 }
 
 .product div, .product p {
   align-self: start;
+  margin-left: 0;
+  color: white;
 }
 
 .product.origin, .product.spec, .product.desc, .product.price, .product.available {
@@ -75,9 +78,11 @@ body {
                     /* INDEX */
 
 h2 {
+  position: relative;
   margin: 2.5rem;
   font-size: 2.5rem;
   font-weight: 700;
+  left: 40%;
 }
 
 h3 {
