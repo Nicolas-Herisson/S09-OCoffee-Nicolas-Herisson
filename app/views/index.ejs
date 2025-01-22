@@ -69,15 +69,17 @@
           <div class="navigate">
             <button class="navigate previousArrowButton" onclick="previous()"></button>
           </div>
-          <% for( const coffee of newCoffees ) { %>
-            <article class="news article">
-              <h3 class="news article--name"><%= coffee.name %></h3>
-              <p class="news article--description"><%= coffee.description %> </p>
-              <div class="button-container">
-                <a class="news button" href="/catalogue/<%= coffee.id %>">Découvrir</a>
-              </div>
-            </article>
-          <% } %>
+          <div class="news articles--container">
+            <% for( const coffee of newCoffees ) { %>
+              <article class="news article">
+                <h3 class="news article--name"><%= coffee.name %></h3>
+                <p class="news article--description"><%= coffee.description %> </p>
+                <div class="button-container">
+                  <a class="news button" href="/catalogue/<%= coffee.id %>">Découvrir</a>
+                </div>
+              </article>
+            <% } %>
+          </div>
           
           <div class="navigate">
             <button class="nextArrowButton" onclick="next()"></button>

@@ -9,8 +9,12 @@ const app = express();
 
 app.set("views", path.join(import.meta.dirname, "app", "views"));
 app.set("view engine", "ejs");
+
 app.use(express.static("public"));
+app.use("/favicon.ico", express.static("public/img/logo.svg"));
+
 app.use(express.urlencoded({extended: true}))
+
 app.use(
     session({
       secret: "OCoffee", 
