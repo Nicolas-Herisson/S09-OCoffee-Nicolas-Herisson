@@ -8,6 +8,8 @@ html {
   --secondColor: #3e1e04;
   --secondColorOpacity: rgb(62, 30, 4, 0.7);
   --pColor: white;
+  --mainBoxShadow: 10px 5px 5px black;
+
   position: relative;
 }
 
@@ -51,6 +53,7 @@ body {
   border: black solid 2px;
   padding: 2rem;
   background-color: var(--secondColorOpacity);
+  box-shadow: var(--mainBoxShadow);
 }
 
 .product div, .product p {
@@ -167,18 +170,19 @@ li a {
   display: none;
 }
 
-.header span {
-  color: var(--secondColor);
-  font-size: 1.5rem;
-}
-
 .header.logo {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.header.img {
+.header.logo--title {
+  color: var(--secondColor);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header.logo--img {
   width: 50px;
   height: 50px;
 }
@@ -195,6 +199,7 @@ li a {
   background-color: var(--secondColorOpacity);
   border-radius: 2rem;
   margin: 2rem;
+  box-shadow: var(--mainBoxShadow);
 }
 
 .about.img--container {
@@ -203,6 +208,10 @@ li a {
 
 .about.button {
   margin-top: 2rem;
+}
+
+.news.article {
+  box-shadow: var(--mainBoxShadow);
 }
 
 .news.article--name, .news.article--description {
@@ -234,6 +243,12 @@ li a {
 
 .previousArrowButton {
   transform: scaleX(-1);
+  margin-right: 1.2rem;
+}
+
+/* Cause of boxShadow */
+.nextArrowButton {
+  margin-left: 1.2rem;
 }
 
 .news.articles--container {
@@ -273,6 +288,7 @@ li a {
   .news.articles--container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     width: 100%;
   }
 
@@ -306,6 +322,7 @@ li a {
   .news.articles--container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     width: 100%;
   }
 }
