@@ -9,6 +9,16 @@
         <h1>Notre catalogue</h1>
       </div>
 
+      <form id="sort form">
+        <select name="sort" id="sort">
+            <option value="spec">Caractéristique</option>
+            <option value="origin">Origine</option>
+            <option value="prix">Prix</option>
+        </select>
+        <input class="sort--button" type="button" value="Valider">
+      </form>
+
+
       <div class="products container">
 
         <% for( const coffee of coffees ) { %>
@@ -30,6 +40,7 @@
 
     <script defer src="/scripts/menu.js" ></script>
     <script defer src="/scripts/displayProducts.js" ></script>
+    <script defer src="/scripts/sort.js"></script>
   </body>
 
 
