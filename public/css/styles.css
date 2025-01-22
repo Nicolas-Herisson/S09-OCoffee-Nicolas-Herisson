@@ -7,6 +7,7 @@ html {
   --mainColor: #d39c35;
   --secondColor: #3e1e04;
   --secondColorOpacity: rgb(62, 30, 4, 0.7);
+  --pColor: white;
   position: relative;
 }
 
@@ -55,7 +56,7 @@ body {
 .product div, .product p {
   align-self: start;
   margin-left: 0;
-  color: white;
+  color: var(--pColor);
 }
 
 .product.origin, .product.spec, .product.desc, .product.price, .product.available {
@@ -94,7 +95,7 @@ h3 {
 p {
   margin:0 1rem 2rem; 
   font-size: 1.5rem;
-  color: white;
+  color: var(--pColor);
 }
 
 .hide {
@@ -111,14 +112,6 @@ header {
 
 }
 
-/* nav {
-  position: relative;
-} */
-
-.menu {
-  /* position: relative; */
-}
-
 .menu.button {
   z-index: 10000;
   position: sticky;
@@ -133,7 +126,7 @@ header {
   border-radius: 0;
 }
 
-.menu.list {
+.menu.button--container {
   position: absolute;
   display: none;
   top: 0;
@@ -162,36 +155,17 @@ li a {
   font-weight: 700;
 }
 
-.menu.list.open {
+.menu.button--container.open {
   display: block;
- 
  }
 
  .menu .button:hover {
   box-shadow: 1px 1px 5px var(--secondColor);
 }
 
-/* @media screen and (min-width: 768px) {
-  .menu.button {
-      display: none;
-  }
-  .menu.menu.list {
-    display: flex;
-    flex-direction: row;
-    text-decoration: none;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    background-color: var(--mainColor);
-    width: 50vw;
-    height: auto;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
-    position: inherit;
-  }
-  li a {
-    color: var(--secondColor);
-  }
-} */
+.menu.list {
+  display: none;
+}
 
 .header span {
   color: var(--secondColor);
@@ -212,10 +186,8 @@ li a {
 
 #about {
   width: 100%;
-  /* height: auto; */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
   margin-bottom: 50px;
 }
 
@@ -227,9 +199,6 @@ li a {
 
 .about.img--container {
   display: none;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .about.button {
@@ -289,15 +258,12 @@ li a {
 @media screen and (min-width: 768px) {
   #about {
     width: 100%;
-    /* height: auto; */
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); */
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
   }
 
   .about.img--container {
-    /* display: block; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,6 +274,30 @@ li a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+  }
+
+  .menu.button {
+    display: none;
+  }
+
+  .menu.button--container {
+    display: none
+  }
+
+  .menu.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 50vw;
+  }
+
+  li {
+    margin: 0 2.5rem;
+  }
+
+  li a {
+    color: var(--secondColor);
   }
 }
 

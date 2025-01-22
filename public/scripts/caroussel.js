@@ -6,6 +6,7 @@ const navigateArrows = document.querySelectorAll('.navigate');
 function displayArticle(index)
 {
     const screenWidth = window.screen.width;
+    
     articles.forEach(article => article.classList.remove('article--active'));
     articles[index].classList.add('article--active');
 
