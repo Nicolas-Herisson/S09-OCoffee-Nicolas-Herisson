@@ -3,32 +3,33 @@
 
     <%- include('partials/header') %>
 
-    <main id="catalog">
+    <main id="catalog" aria-labelledby="catalog main">
       <div class="catalog">
-        <img src="/img/catalogBackground.jpg" alt="">
-        <h1>Notre catalogue</h1>
+        <img src="/img/catalogBackground.jpg" alt="Background imge of coffee grain on a section">
+        <h1 aria-label="Text on background image : Our catalog">Notre catalogue</h1>
       </div>
 
       <section class="form container">
         <form action="/catalogue/specFilter">
-          <select name="specFilter" id="specFilter" class="form select">
+          <select name="specFilter" id="specFilter" class="form select" aria-labelledby="Product filter by coffe specification">
             <% for( const spec of specs) { %>
-              <option value="<%= spec.spec %>"><%= spec.spec %></option>
+              <option value="<%= spec.spec %>" aria-label="Filter by <%= spec.spec %>"><%= spec.spec %></option>
             <% } %>
           </select>
-          <input class="form button" id="specFilterutton" type="submit" value="Valider">
+          <input class="form button" id="specFilterutton" type="submit" value="Valider" aria-label="Submit coffee specification filter">
         </form>
 
         <form action="/catalogue/originFilter">
-          <select name="originFilter" id="originFilter" class="form select">
+          <select name="originFilter" id="originFilter" class="form select" aria-labelledby="Product filter by coffe origin">
               <% for( const origin of origins) { %>
-              <option value="<%= origin.origin %>"><%= origin.origin %></option>
+              <option value="<%= origin.origin %>" aria-label="Filter by <%= origin.origin %>"><%= origin.origin %></option>
             <% } %>
           </select>
-          <input class="form button" id="originFilter" type="submit" value="Valider">
+          <input class="form button" id="originFilter" type="submit" value="Valider" aria-label="Submit coffee origin filter">
         </form>
 
-        <form action="/catalogue/sort">
+        <!-- To implement | must sort filtered results -->
+        <!-- <form action="/catalogue/sort">
           <select name="sortSelector" id="sortSelector" class="form select">
               <option value="spec asc">Caractéristique ⬆️</option>
               <option value="spec desc">Caractéristique ⬇️</option>
@@ -36,25 +37,25 @@
               <option value="origin desc">Origine ⬇️</option>
           </select>
           <input class="form button" id="sortSelectorBbutton" type="submit" value="Valider">
-        </form>
+        </form> -->
 
     </section>
 
       <div class="products container">
 
         <% for( const coffee of filteredCoffees ) { %>
-          <article class="product container">
-            <h3 class="product name"><%= coffee.name %></h3>
-            <div class="product origin">Origine : <span><%= coffee.origin %></span></div>
-            <div class="product spec">Caractéristique principale : <span><%= coffee.spec %></span></div>
-            <p class="product desc"><%= coffee.description %></p>
-            <a class="product button" href="/catalogue/<%= coffee.id %>">Découvrir</a>
+          <article class="product container" role="article" aria-labelledby="product frame">
+            <h3 aria-label="Coffee named " class="product name"><%= coffee.name %></h3>
+            <div aria-label="Coffee origin" class="product origin">Origine : <span><%= coffee.origin %></span></div>
+            <div aria-label="Coffee specification" class="product spec">Caractéristique principale : <span><%= coffee.spec %></span></div>
+            <p aria-label="Coffee description" class="product desc"><%= coffee.description %></p>
+            <a class="product button" href="/catalogue/<%= coffee.id %>" aria-label="Button discovery <%= coffee.name %>">Découvrir</a>
           </article>
         <% } %>
       </div>
       <% if (filteredCoffees.length > 3) { %>
         <div class="button-container">
-          <button class="products button">Voir tous les cafés</button>
+          <button class="products button" aria-label="Button: show every coffees">Voir tous les cafés</button>
         </div>
       <% } %>
       
