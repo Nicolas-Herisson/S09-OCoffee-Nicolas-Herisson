@@ -1,0 +1,24 @@
+<section class="form container-admin">
+
+    <form action="/admin/addProduct">
+      <label name="addProduct" id="addProduct" class="form label-field" aria-labelledby="Add product field"><h2> Ajouter un cafe :</h2>
+
+        <% for( const colName of colsName) { %>
+
+            <label name="add Product text field" id="addProductField" class="form label" aria-labelledby="Add product text field"><%= colName.column_name %></label>
+
+            <% if (colName.column_name === 'price' || colName.column_name === 'reference') { %>
+                <!-- Accept only numeric and dot key pressed (avoir using disgusting type number with up/down arrows) -->
+                <input type="text" onkeypress="return /[0-9.]/i.test(event.key)" name="<%= colName.column_name %>" aria-label="Product <%= colName.column_name %> text input" class="form input" required></input>
+            <% } else { %>
+                <input type="text" name="<%= colName.column_name %>" aria-label="Product <%= colName.column_name %> text input" class="form input"></input>
+             <% } %>
+
+        <% } %>
+
+      </label>
+      <input class="form button" id="addProductButton" type="submit" value="Valider" aria-label="Submit product on product list">
+    </form>
+
+
+</section>

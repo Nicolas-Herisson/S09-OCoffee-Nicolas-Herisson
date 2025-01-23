@@ -6,7 +6,7 @@ CREATE TABLE "coffee"(
   "description" VARCHAR(512),
   "reference" INT NOT NULL,
   "origin" VARCHAR(64) NOT NULL,
-  "price" INT NOT NULL,
+  "price" DECIMAL(4, 2) NOT NULL,
   "spec" VARCHAR(64) NOT NULL,
   "available" VARCHAR(24) NOT NULL
 );

@@ -50,6 +50,21 @@ const dataMapper = {
 
         return result.rows;
     },
+    getTableColumnsName: async() => {
+        const sql = ` SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'coffee' OFFSET 1;`
+
+        const result = await client.query(sql);
+
+        return result.rows;
+    },
+    addProduct: async(product) => {
+        const sql = {
+            text: `INSERT INTO coffee (name, description, reference, origin, price, spec, available) VALUES ($1, $2, $3, $4, $5, $6, $7);`,
+            values: [`${product.name}`, `${product.description}`, `${product.reference}`, `${product.origin}`, `${product.price}`, `${product.spec}`, `${product.available}`]
+        }
+
+        await client.query(sql);
+    }
 };
 
 export default dataMapper;
