@@ -21,6 +21,8 @@ body {
   /* stick footer at bottom page */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 header, footer {
@@ -36,6 +38,7 @@ header, footer {
 
 footer {
   margin: 2rem 0 0 0;
+  justify-content: center;
   width: 100vw;
   height: auto;
 }
