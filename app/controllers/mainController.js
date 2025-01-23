@@ -97,6 +97,16 @@ const mainController = {
             errors[500](error);
         }
     },
+    showContactPage: async (req, res) => {
+        try 
+        {
+            res.render("contact");
+        } 
+        catch (error) 
+        {
+            errors[500](error);
+        }
+    },
 };
 
 export default mainController;
