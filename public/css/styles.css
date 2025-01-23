@@ -7,7 +7,7 @@ html {
   --mainColor: #d39c35;
   --secondColor: #3e1e04;
   --secondColorOpacity: rgb(62, 30, 4, 0.7);
-  --secondColorOpacity0: rgb(62, 30, 4, 0);
+  --transparent: rgb(0, 0, 0, 0);
   --pColor: white;
   --mainBoxShadow: 10px 5px 5px black;
 
@@ -158,9 +158,9 @@ p {
   background-repeat: no-repeat;
   background-size: 100%;
   border: none;
-  background-color: var(--secondColor0);
+  background-color: var(--transparent);
   border-radius: 0;
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem 0;
 }
 
 .menu.button--container {

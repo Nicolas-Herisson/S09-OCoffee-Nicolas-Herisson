@@ -1,12 +1,19 @@
 <section class="form container-admin">
 
-    <form action="/contact/mailed">
-      <label name="contactField" id="contactField" class="form label-field" aria-labelledby="Contact field"><h2> Information :</h2>
-        <label name="emailField" id="mailField" class="form label" aria-labelledby="email field">Email</label>
-        <input type="email" name="email" aria-label="email input" class="form input" required></input>
-      </label>
-      <input class="form button" id="emailButton" type="submit" value="Valider" aria-label="Submit email">
-    </form>
+    <form>
+      <label name="contactField" id="contactField" class="form label-field" aria-labelledby="Contact field"><h2> Informations :</h2>
 
+        <label name="nameField" id="nameField" class="form label" aria-labelledby="name field">Name</label>
+        <input type="text" id="name" name="name" aria-label="name input" class="form input" required></input>
+
+        <label name="emailField" id="mailField" class="form label" aria-labelledby="email field">Email</label>
+        <input type="email" id="email" name="email" aria-label="email input" class="form input" required></input>
+
+        <label id="messageField" class="form label" name="messageField" aria-labelledby="message field">Message</label>
+        <textarea id="message" class="form input" name="message" aria-label="message input" required></textarea>
+      </label>
+      <button class="form button" id="submitButton" aria-label="Submit button">Envoyer</button>
+    </form>
+    
 
 </section>

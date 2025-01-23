@@ -12,7 +12,7 @@ mainRouter.get("/catalogue/specFilter", mainController.showSpecpage);
 mainRouter.get("/catalogue/originFilter", mainController.showOriginpage);
 mainRouter.get("/catalogue/sort", mainController.showSortpage);
 
-mainRouter.get('/contact', mainController.showContactPage)
+mainRouter.get('/contact', mainController.showContactPage);
 
 export default mainRouter;
 
