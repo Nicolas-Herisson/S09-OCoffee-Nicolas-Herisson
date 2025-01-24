@@ -1,12 +1,14 @@
 :root {
   /* --gutter: 0.8rem; */
+  width: 100vw;
 }
 
 html {
   font-size: 62.5%;
   --mainColor: #d39c35;
   --secondColor: #3e1e04;
-  --secondColorOpacity: rgb(62, 30, 4, 0.7);
+  --secondColorOpacity: #6a4312;
+  /* --secondColorOpacity: rgb(62, 30, 4, 0.7); */
   --transparent: rgb(0, 0, 0, 0);
   --pColor: white;
   --mainBoxShadow: 10px 5px 5px black;
@@ -23,7 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 100%;
 }
 
 header, footer {
@@ -34,6 +36,14 @@ header, footer {
   align-content: center;
   justify-content: space-between;
   margin-bottom: 50px;
+  width: 100vw;
+}
+
+header {
+  /* sticky : stuck but stay in the body | fixed: overall - breack view */
+  position: sticky;
+  z-index: 20;
+  top: 0;
   width: 100vw;
 }
 
@@ -149,7 +159,7 @@ p {
 
 
 .menu.button {
-  z-index: 10000;
+  z-index: 19;
   position: sticky;
   top: 0.8rem;
   height: 35px;
@@ -174,13 +184,14 @@ p {
   height: 100vh;
   text-align: start;
   align-content: center;
-  z-index: 9999;
+  z-index: 18;
 }
 
 ul { 
   list-style-type: none;
 }
 
+/* smartphone menu | space between contents */
 .menu li {
   margin-bottom: 2rem;
 }
@@ -342,7 +353,7 @@ li a {
     width: 50vw;
   }
 
-  li {
+  .menu li {
     margin: 0 2.5rem;
   }
 }
