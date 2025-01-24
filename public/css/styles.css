@@ -45,6 +45,7 @@ header {
   z-index: 20;
   top: 0;
   width: 100vw;
+  border-bottom: solid black 2px;
 }
 
 footer {
