@@ -21,7 +21,7 @@ html {
 body {
   background-color: var(--mainColor);
   width: 100vw;
-  /* stick footer at bottom page */
+  /* stuck footer at bottom page */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
