@@ -18,7 +18,7 @@ function displayArticle(index)
         if (articles[index+1]) 
             articles[index+1].classList.add('article--active');
     }
-    if (screenWidth > 1024)
+    if (screenWidth >= 1024)
     {
         articles.forEach(article => article.classList.add('article--active'));
         navigateArrows.forEach(arrow => arrow.classList.add('hide'));
